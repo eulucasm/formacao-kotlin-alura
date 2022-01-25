@@ -1,9 +1,9 @@
-open class Conta (
+abstract class Conta (
     val titular: String,
     val numero: Int
 ) {
     var saldo = 0.0
-        private set
+        protected set
 
 /*construtor secundario
     constructor(titular: String, numero: Int){
@@ -18,13 +18,7 @@ open class Conta (
         }
     }
 
-    open fun saca(valor: Double) {
-        if (this.saldo >= valor) {
-            saldo -= valor
-        } else {
-            println("Saldo insuficiente para Saque")
-        }
-    }
+    abstract fun saca(valor: Double)
 
     fun tranfere(valor: Double, contaDestino: Conta): Boolean {
         if (this.saldo >= valor) {

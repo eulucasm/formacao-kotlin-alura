@@ -4,7 +4,7 @@ class CalculadoraBonificacao {
         private set
     //polimorfismo = reutilização de comportamentos referente a classe mae
     fun registra(funcionario: Funcionario){
-        this.total += funcionario.bonificacao()
+        this.total += funcionario.bonificacao
     }
 
 }
