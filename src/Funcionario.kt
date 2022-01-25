@@ -1,9 +1,10 @@
 class Funcionario(
     val nome: String,
     val cpf: String,
-    val salario: Double
+    val salario: Double,
 ) {
     fun bonificacao(): Double {
-        return  salario * 0.1
+        return salario * 0.1
     }
+
 }
