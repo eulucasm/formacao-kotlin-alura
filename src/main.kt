@@ -24,6 +24,7 @@ fun main() {
     println(gerente.cpf)
     println(gerente.salario)
     println(gerente.bonificacao())
+
     if(gerente.autentica(123456)){
         println("Autenticação com sucesso")
     }else{
