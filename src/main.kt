@@ -1,10 +1,13 @@
 class Conta {
     var titular = ""
     var numero = 0
-    private var saldo = 0.0
+    var saldo = 0.0
+        private set
 
     fun deposita(valor: Double) {
-        this.saldo += valor
+        if (valor > 0) {
+            this.saldo += valor
+        }
     }
 
     fun saca(valor: Double) {
@@ -24,9 +27,15 @@ class Conta {
         return false
     }
 
-    fun getSaldo(): Double {
-        return saldo
-    }
+    //codigo apenas ilustrativo para estudo
+//    fun getSaldo(): Double {
+//        return saldo
+//    }
+//    fun setSaldo(valor: Double){
+//        if (valor > 0 ){
+//            saldo = valor
+//        }
+//    }
 }
 
 fun main() {
@@ -44,25 +53,25 @@ fun main() {
 
     println(contaLucas.titular)
     println(contaLucas.numero)
-    println(contaLucas.getSaldo())
+    println(contaLucas.saldo)
     println()
     println(contaFran.titular)
     println(contaFran.numero)
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
     println()
 
     contaLucas.deposita(50.0)
     println("Depositando na conta do Lucas")
-    println(contaLucas.getSaldo())
+    println(contaLucas.saldo)
     println()
 
     println("Sacando na conta do Lucas")
     contaLucas.saca(100.0)
-    println(contaLucas.getSaldo())
+    println(contaLucas.saldo)
 
     contaFran.deposita(30.0)
     println("Depositando na conta da Fran")
-    println(contaFran.getSaldo())
+    println(contaFran.saldo)
     println()
 
     println("Transferencia da conta da fran para alex")
@@ -72,8 +81,8 @@ fun main() {
     } else {
         println("falha na transferencia")
     }
-    println(contaLucas.getSaldo())
-    println(contaFran.getSaldo())
+    println(contaLucas.saldo)
+    println(contaFran.saldo)
 }
 
 fun testaCopiasEReferencias() {
