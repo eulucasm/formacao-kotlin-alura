@@ -1,4 +1,4 @@
-class Conta (
+open class Conta (
     val titular: String,
     val numero: Int
 ) {
@@ -18,7 +18,7 @@ class Conta (
         }
     }
 
-    fun saca(valor: Double) {
+    open fun saca(valor: Double) {
         if (this.saldo >= valor) {
             saldo -= valor
         } else {
