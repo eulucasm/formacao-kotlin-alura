@@ -12,8 +12,14 @@ fun testaAutenticacao() {
         2000,
         200.0
     )
+    val cliente = Cliente(
+        "cliente",
+        "12345679832",
+        3000
+    )
 
     val sistema = SistemaInterno()
     sistema.entra(gerente, 1000)
     sistema.entra(diretor, 2000)
+    sistema.entra(cliente, 3000)
 }
